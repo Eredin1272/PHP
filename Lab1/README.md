@@ -295,6 +295,20 @@ Location: https://sandbox.com/cars/123
 
 - Ошибка синтаксиса JSON.
 
+  *Возможен этот статус, так как:*
+  
+  Заголовок показывает, что ожидается JSON-тело
+
+```
+Content-Type: application/json
+```
+
+Но получает
+
+```
+model=Corolla&make=Toyota&year=2020
+```
+
 ### 401 Unauthorized
 
 Возвращается, если:
