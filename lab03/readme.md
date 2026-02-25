@@ -20,7 +20,7 @@ $dayOfWeek = date('N')
 
 Ниже пример таблицу которая должна получиться:
 
-![exampleOfTable](/images/exampleOfTable.png)
+![exampleOfTable](./images/exampleOfTable.png)
 
 #### Реализация расписания
 
