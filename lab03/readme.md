@@ -20,7 +20,7 @@ $dayOfWeek = date('N')
 
 Ниже пример таблицу которая должна получиться:
 
-![exampleOfTable](/images/Screenshot_1.png)
+![exampleOfTable](/images/exampleOfTable.png)
 
 #### Реализация расписания
 
@@ -109,7 +109,7 @@ if ($dayOfWeek == 2 || $dayOfWeek == 4 || $dayOfWeek == 6) {
 
 #### Результат вывода:
 
-![tableResylt](/images/Screenshot_2.png)
+![tableResult](/images/tableResult.png)
 
 ---
 
@@ -146,7 +146,7 @@ echo "End of the loop: a = $a, b = $b<br/><br/><br/> ";
 
 Результат:
 
-![resultOfFor](/images/Screenshot_3.png)
+![resultOfFor](/images/resultOfFor.png)
 
 ##### Цикл `while`:
 
@@ -175,7 +175,7 @@ echo "End of the loop: a = $a, b = $b<br/><br/><br/> ";
 
 Результат:
 
-![resultOfWhile](/images/Screenshot_4.png)
+![resultOfWhile](/images/resultOfWhile.png)
 
 ##### Цикл `do while`:
 
@@ -203,7 +203,7 @@ echo "End of the loop: a = $a, b = $b<br/><br/><br/>";
 
 Результат:
 
-![resutOfDoWhile](/images/Screenshot_5.png)
+![resutOfDoWhile](/images/resultOfDoWhile.png)
 
 ---
 ### Контрольные вопросы:
