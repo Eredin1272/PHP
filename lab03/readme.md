@@ -20,11 +20,11 @@ $dayOfWeek = date('N')
 
 Ниже пример таблицу которая должна получиться:
 
-![exampleOfTable](/images/exampleOfTable.png)
+![exampleOfTable](./images/exampleOfTable.png)
 
 #### Реализация расписания
 
-Были созданы две функции для каждого из работников, которые проверяют текущи день недели посредством логических операторов `||` и условных операторов `if else` :
+Были созданы две управляющие конструкции для каждого из работников, которые проверяют текущи день недели посредством логических операторов `||` и условных операторов `if else` :
 
 ```php
 <?php
@@ -109,7 +109,7 @@ if ($dayOfWeek == 2 || $dayOfWeek == 4 || $dayOfWeek == 6) {
 
 #### Результат вывода:
 
-![tableResult](/images/tableResult.png)
+![tableResult](./images/tableResult.png)
 
 ---
 
@@ -146,7 +146,7 @@ echo "End of the loop: a = $a, b = $b<br/><br/><br/> ";
 
 Результат:
 
-![resultOfFor](/images/resultOfFor.png)
+![resultOfFor](./images/resultOfFor.png)
 
 ##### Цикл `while`:
 
@@ -175,7 +175,7 @@ echo "End of the loop: a = $a, b = $b<br/><br/><br/> ";
 
 Результат:
 
-![resultOfWhile](/images/resultOfWhile.png)
+![resultOfWhile](./images/resultOfWhile.png)
 
 ##### Цикл `do while`:
 
@@ -203,7 +203,7 @@ echo "End of the loop: a = $a, b = $b<br/><br/><br/>";
 
 Результат:
 
-![resutOfDoWhile](/images/resultOfDoWhile.png)
+![resutOfDoWhile](./images/resultOfDoWhile.png)
 
 ---
 ### Контрольные вопросы:
