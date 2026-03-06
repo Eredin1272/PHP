@@ -406,7 +406,6 @@ $dateSorting = sortTransactionsByDate($transactions);
 А эта функция соритирует транзакции по сумме(убывание):
 
 ```php
-$dateSorting = sortTransactionsByDate($transactions);
 
 /**
  * Сортирует массив транзакций по сумме (по убыванию).
