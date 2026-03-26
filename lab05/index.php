@@ -28,9 +28,17 @@ $repository->addTransaction(new Transaction(10, '2024-03-01', 150.00, 'Поку�
 $manager = new TransactionManager($repository);
 
 // Подготавливаем данные: например, сортируем по дате
-$sortedTransactions = $manager->sortTransactionsByDate();
+$sortedByDate = $manager->sortTransactionsByDate();
+$total = $manager->calculateTotalAmount();
+$totalInRange = $manager->calculateTotalAmountByDateRange('2023-01-01', '2023-12-31');
+$merchantSell = $manager->countTransactionsByMerchant('KFC');
+$sortedByAmount = $manager->sortTransactionsByAmountDesc();
 
 // Выводим таблицу
 $renderer = new TransactionTableRenderer();
 echo "<h2>Список транзакций</h2>";
-echo $renderer->render($sortedTransactions);
+echo $renderer->render($sortedByDate);
+echo "<br/> Сумма всех транзакций:" . " " . $total;
+echo "<br/> Сумма всех транзакций за 2023 год:" . " " . $totalInRange;
+echo "<br/> Транзакции в KFC:" . " " . $merchantSell;
+echo $renderer->render($sortedByAmount);
