@@ -222,5 +222,7 @@ function deleteTransaction(int $id): bool
 }
 
 $delTransaction = deleteTransaction(3);
+$totalAmount = calculateTotalAmount($transactions);
+
 require 'template.php';
 ?>
