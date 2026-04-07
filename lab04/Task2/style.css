@@ -4,7 +4,6 @@ body{
     margin:0;
 }
 
-/* HEADER */
 
 header{
     background:white;
@@ -23,7 +22,6 @@ nav a:hover{
     color:#0077cc;
 }
 
-/* MAIN */
 
 main{
     padding:30px 40px;
@@ -37,7 +35,6 @@ p{
     color:#777;
 }
 
-/* GALLERY */
 
 .gallery{
     margin-top:20px;
@@ -51,8 +48,6 @@ p{
     border-radius:10px;
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
-
-/* FOOTER */
 
 footer{
     margin-top:40px;
