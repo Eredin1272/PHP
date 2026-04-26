@@ -1,0 +1,37 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<h2>Добавить игру</h2>
+
+{% for error in errors %}
+<p style="color:red;">{{ error }}</p>
+{% endfor %}
+
+<form method="POST">
+
+<input name="title" placeholder="Название" required><br><br>
+
+<select name="genre" required>
+    <option value="">Жанр</option>
+    <option>RPG</option>
+    <option>Shooter</option>
+</select><br><br>
+
+<input name="platform" placeholder="Платформа" required><br><br>
+
+Оценка:
+{% for i in 1..5 %}
+<input type="radio" name="rating" value="{{ i }}"> {{ i }}
+{% endfor %}
+
+<br><br>
+
+<input type="number" name="play_time" required><br><br>
+<input type="date" name="completed_at" required><br><br>
+
+<textarea name="review" required></textarea><br><br>
+
+<button>Сохранить</button>
+
+</form>
+{% endblock %}

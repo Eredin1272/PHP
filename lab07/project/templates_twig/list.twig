@@ -1,0 +1,30 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<h2>Список игр</h2>
+
+<table border="1">
+<tr>
+<th>Название</th>
+<th>Жанр</th>
+<th>Платформа</th>
+<th>Оценка</th>
+<th>Часы</th>
+<th>Дата</th>
+<th>Отзыв</th>
+</tr>
+
+{% for game in games %}
+<tr>
+<td>{{ game.title }}</td>
+<td>{{ game.genre }}</td>
+<td>{{ game.platform }}</td>
+<td>{{ game.rating | stars }}</td>
+<td>{{ game.play_time }}</td>
+<td>{{ game.completed_at }}</td>
+<td>{{ game.review }}</td>
+</tr>
+{% endfor %}
+
+</table>
+{% endblock %}
