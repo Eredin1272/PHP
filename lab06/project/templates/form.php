@@ -1,6 +1,6 @@
 <h2>Добавить игру</h2>
 
-<form action="index.php?action=add" method="POST">
+<form action="process.php" method="POST">
 
     <label>Название игры:</label><br>
     <input type="text" name="title"><br><br>
@@ -21,16 +21,8 @@
     <input type="radio" name="rating" value="3">3
     <input type="radio" name="rating" value="4">4
     <input type="radio" name="rating" value="5">5
+
     <br><br>
-
-    <label>Время:</label><br>
-    <input type="number" name="play_time"><br><br>
-
-    <label>Дата:</label><br>
-    <input type="date" name="completed_at"><br><br>
-
-    <label>Отзыв:</label><br>
-    <textarea name="review"></textarea><br><br>
 
     <button type="submit">Сохранить</button>
 </form>
