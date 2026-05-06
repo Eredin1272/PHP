@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель администратора</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="page">
+<h1>Панель администратора</h1>
+<nav>
+    <a th:href="@{/admin/appointments}">Заявки</a>
+    <a th:href="@{/admin/doctors}">Врачи</a>
+    <a th:href="@{/admin/services}">Услуги</a>
+    <a th:href="@{/admin/admins/new}">Создать администратора</a>
+    <a th:href="@{/dashboard}">Личный кабинет</a>
+</nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма врача</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="page">
+<h1>Форма врача</h1>
+<nav>
+    <a th:href="@{/admin/doctors}">Врачи</a>
+    <a th:href="@{/admin}">Панель администратора</a>
+</nav>
+
+<form th:action="${doctorId == null} ? @{/admin/doctors} : @{/admin/doctors/{id}(id=${doctorId})}"
+      method="post" th:object="${doctor}">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+    <label>
+        ФИО
+        <input type="text" th:field="*{fullName}" required maxlength="120">
+    </label>
+    <div th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></div>
+
+    <label>
+        Специализация
+        <input type="text" th:field="*{specialization}" required maxlength="80">
+    </label>
+    <div th:if="${#fields.hasErrors('specialization')}" th:errors="*{specialization}"></div>
+
+    <label>
+        Стаж
+        <input type="number" th:field="*{experienceYears}" required min="0" max="70">
+    </label>
+    <div th:if="${#fields.hasErrors('experienceYears')}" th:errors="*{experienceYears}"></div>
+
+    <label>
+        Кабинет
+        <input type="text" th:field="*{office}" required maxlength="40">
+    </label>
+    <div th:if="${#fields.hasErrors('office')}" th:errors="*{office}"></div>
+
+    <label>
+        <input type="checkbox" th:field="*{active}">
+        Активен
+    </label>
+
+    <button type="submit">Сохранить</button>
+</form>
+</div>
+</body>
+</html>

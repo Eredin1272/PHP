@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Управление заявками</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="page">
+<h1>Заявки на приём</h1>
+<nav>
+    <a th:href="@{/admin}">Панель администратора</a>
+    <a th:href="@{/dashboard}">Личный кабинет</a>
+</nav>
+
+<table>
+    <thead>
+    <tr>
+        <th>Пациент</th>
+        <th>Контакты</th>
+        <th>Врач</th>
+        <th>Услуга</th>
+        <th>Время</th>
+        <th>Статус</th>
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="appointment : ${appointments}">
+        <td th:text="${appointment.patientName}">Пациент</td>
+        <td>
+            <span th:text="${appointment.phone}">Телефон</span><br>
+            <span th:text="${appointment.email}">Email</span>
+        </td>
+        <td th:text="${appointment.doctor.fullName}">Врач</td>
+        <td th:text="${appointment.medicalService.name}">Услуга</td>
+        <td th:text="${#temporals.format(appointment.appointmentTime, 'yyyy-MM-dd HH:mm')}">Время</td>
+        <td th:text="${appointment.status.label}">Новая</td>
+        <td>
+            <form th:action="@{/admin/appointments/{id}/status(id=${appointment.id})}" method="post">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                <select name="status">
+                    <option th:each="status : ${statuses}" th:value="${status}"
+                            th:selected="${status == appointment.status}" th:text="${status.label}"></option>
+                </select>
+                <button type="submit">Сохранить</button>
+            </form>
+            <form th:action="@{/admin/appointments/{id}/delete(id=${appointment.id})}" method="post">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                <button type="submit">Удалить</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>

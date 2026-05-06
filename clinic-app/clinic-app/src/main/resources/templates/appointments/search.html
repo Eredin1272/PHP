@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск записей</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="page">
+<h1>Поиск записей</h1>
+<nav>
+    <a th:href="@{/dashboard}">Личный кабинет</a>
+    <a th:href="@{/appointments/new}">Записаться</a>
+</nav>
+<p class="notice" th:if="${param.created}">Заявка на запись создана.</p>
+
+<form th:action="@{/appointments/search}" method="get" th:object="${search}">
+    <label>
+        ФИО пациента
+        <input type="text" th:field="*{patientName}">
+    </label>
+
+    <label>
+        Врач
+        <select th:field="*{doctorId}">
+            <option value="">Любой врач</option>
+            <option th:each="doctor : ${doctors}" th:value="${doctor.id}" th:text="${doctor.fullName}"></option>
+        </select>
+    </label>
+
+    <label>
+        Статус
+        <select th:field="*{status}">
+            <option value="">Любой статус</option>
+            <option th:each="status : ${statuses}" th:value="${status}" th:text="${status.label}"></option>
+        </select>
+    </label>
+
+    <button type="submit">Найти</button>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>Пациент</th>
+        <th>Врач</th>
+        <th>Услуга</th>
+        <th>Время</th>
+        <th>Статус</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="appointment : ${appointments}">
+        <td th:text="${appointment.patientName}">Пациент</td>
+        <td th:text="${appointment.doctor.fullName}">Врач</td>
+        <td th:text="${appointment.medicalService.name}">Услуга</td>
+        <td th:text="${#temporals.format(appointment.appointmentTime, 'yyyy-MM-dd HH:mm')}">Время</td>
+        <td th:text="${appointment.status.label}">Новая</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
