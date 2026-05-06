@@ -6,7 +6,8 @@ function getGames(): array
         return [];
     }
 
-    return json_decode(file_get_contents('data.json'), true) ?? [];
+    $json = file_get_contents('data.json');
+    return json_decode($json, true) ?? [];
 }
 
 function saveGame(array $game): void
